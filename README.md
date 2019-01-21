@@ -1,6 +1,6 @@
 # Kirby Env
 
-Kirby Env use the `vlucas/phpdotenv` package and enable their features for Kirby.
+**Kirby Env** use the `vlucas/phpdotenv` package and enable their features for Kirby.
 This package should be used if you want to store your project credentials or variables in a separate place from your code or if you want to have development and production access in different places.
 
 ## Installation
@@ -13,10 +13,16 @@ composer require beebmx/kirby-env
 
 ## Usage
 
-In your `index.php` add **before** `render()`:
+You don't need to do anything if your want to access in any $page, just use the page method:
 
 ```php
-(new \Beebmx\KirbyEnv\Env('main/path'))->load();
+$page->env('VAR');
+```
+
+But if you want to set variables in your `config.php` file, first you need to load the object with:
+
+```php
+(new \Beebmx\KirbyEnv('main/path'))->load();
 ```
 
 You need to have an `.env` file in your `main/path` directory.  
@@ -49,8 +55,24 @@ $env = new \Beebmx\KirbyEnv;
 $env->overload();
 ```
 
+## Example
 
+Here's an example of a configuration in `config.php`file:
+
+```php
+<?php
+
+(new \Beebmx\KirbyEnv('main/path')->load();
+
+return [
+    'debug' => env('KIRBY_DEBUG', false),
+    'SECRET' => env('SECRET_KEY'),
+    'PUBLIC' => env('PUBLIC_KEY'),
+];
+
+```
 
 ## Usage note
 
 It is important that you add to your `.gitignore` the `.env` file.
+The `main/path` is where the `.env` file is located.
