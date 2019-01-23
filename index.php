@@ -7,7 +7,7 @@ Kirby::plugin('beebmx/kirby-env', [
     'pageMethods' => [
         'env' => function ($value, $default = '') {
             if (!Beebmx\KirbyEnv::isLoaded()) {
-                $path = option('beebmx.kirby-env.path', kirby()->roots()->base());
+                $path = option('beebmx.kirby-env.path', kirby()->roots()->index());
                 (new \Beebmx\KirbyEnv($path))->load();
             }
 

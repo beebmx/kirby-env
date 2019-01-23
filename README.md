@@ -74,5 +74,5 @@ return [
 
 ## Usage note
 
-It is important that you add to your `.gitignore` the `.env` file.
+It is important that you add to your `.gitignore` the `.env` file. 
 The `main/path` is where the `.env` file is located.
