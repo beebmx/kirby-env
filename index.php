@@ -1,5 +1,7 @@
 <?php
 
+use Kirby\Cms\App as Kirby;
+
 Kirby::plugin('beebmx/kirby-env', [
     'options' => [
         'file' => '.env',
