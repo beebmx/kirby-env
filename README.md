@@ -22,7 +22,7 @@ $page->env('VAR');
 But if you want to set variables in your `config.php` file, first you need to load the object with:
 
 ```php
-(new \Beebmx\KirbyEnv('main/path'))->load();
+\Beebmx\KirbyEnv('main/path')::load();
 ```
 
 You need to have an `.env` file in your `main/path` directory.  
