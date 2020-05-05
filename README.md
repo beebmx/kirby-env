@@ -44,15 +44,13 @@ BAZ=${FOO}
 When you create an instance of `\Beebmx\KirbyEnv` you need to load the environment with:
 
 ```php
-$env = new \Beebmx\KirbyEnv;
-$env->load();
+\Beebmx\KirbyEnv::load();
 ```
 
 If you require the immutability provides by `vlucas/phpdotenv`, just:
 
 ```php
-$env = new \Beebmx\KirbyEnv;
-$env->overload();
+\Beebmx\KirbyEnv::overload();
 ```
 
 ## Example
@@ -62,7 +60,7 @@ Here's an example of a configuration in `config.php`file:
 ```php
 <?php
 
-(new \Beebmx\KirbyEnv('main/path')->load();
+\Beebmx\KirbyEnv::load('main/path');
 
 return [
     'debug' => env('KIRBY_DEBUG', false),

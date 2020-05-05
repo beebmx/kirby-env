@@ -5,13 +5,13 @@ namespace Beebmx\Tests;
 use PHPUnit\Framework\TestCase;
 use Beebmx\KirbyEnv;
 
-class HelperTest extends TestCase
+class HelperLoadTest extends TestCase
 {
     private $resources;
 
     public function setUp()
     {
-        (new KirbyEnv(__DIR__ . '/resources'))->load();
+        KirbyEnv::load(__DIR__ . '/resources');
     }
 
     /**
@@ -39,5 +39,14 @@ class HelperTest extends TestCase
     public function a_defined_variable_ignore_the_default_value()
     {
         $this->assertEquals('BAR', env('FOO', 'default'));
+    }
+
+    /**
+    *
+    * @test
+    */
+    public function a_nested_variable_is_set()
+    {
+        $this->assertEquals('BAR', env('DUPLICATE_FOO', 'default'));
     }
 }

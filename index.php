@@ -1,5 +1,6 @@
 <?php
 
+use Beebmx\KirbyEnv;
 use Kirby\Cms\App as Kirby;
 
 Kirby::plugin('beebmx/kirby-env', [
@@ -8,9 +9,10 @@ Kirby::plugin('beebmx/kirby-env', [
     ],
     'pageMethods' => [
         'env' => function ($value, $default = '') {
-            if (!Beebmx\KirbyEnv::isLoaded()) {
+            if (!KirbyEnv::isLoaded()) {
                 $path = option('beebmx.kirby-env.path', kirby()->roots()->index());
-                (new \Beebmx\KirbyEnv($path))->load();
+                $file = option('beebmx.kirby-env.file', '.env');
+                KirbyEnv::load($path, $file);
             }
 
             return env($value, $default);

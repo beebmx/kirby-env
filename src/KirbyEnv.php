@@ -3,44 +3,44 @@
 namespace Beebmx;
 
 use Dotenv\Dotenv;
+use Dotenv\Repository\Adapter\EnvConstAdapter;
+use Dotenv\Repository\Adapter\ServerConstAdapter;
+use Dotenv\Repository\RepositoryBuilder;
 
 class KirbyEnv
 {
-    public $dotenv;
     protected static $loaded = false;
 
+    public static function load(string $path = __DIR__, string $file = '.env'): array
+    {
+        $adapters = [
+            new EnvConstAdapter(),
+            new ServerConstAdapter(),
+        ];
+
+        $repository = RepositoryBuilder::create()
+            ->withReaders($adapters)
+            ->withWriters($adapters)
+            ->immutable()
+            ->make();
+
+        static::$loaded = true;
+
+        return Dotenv::create($repository, $path, null)->load();
+    }
+
     /**
-     * Creates a new Env instance
+     * Load environment file in given directory.
      *
      * @param string $path
      * @param string $file
-     *
-     * @return void
+     * @return array
      */
-    public function __construct($path = __DIR__, $file = '.env')
+    public static function overload(string $path = __DIR__, string $file = '.env'): array
     {
         static::$loaded = true;
-        $this->dotenv = Dotenv::create($path, $file);
-    }
 
-    /**
-     * Load environment file in given directory.
-     *
-     * @return array
-     */
-    public function load()
-    {
-        return $this->dotenv->load();
-    }
-
-    /**
-     * Load environment file in given directory.
-     *
-     * @return array
-     */
-    public function overload()
-    {
-        return $this->dotenv->overload();
+        return Dotenv::createImmutable($path, $file)->load();
     }
 
     public static function isLoaded()
