@@ -9,7 +9,7 @@ class HelperLoadTest extends TestCase
 {
     private $resources;
 
-    public function setUp()
+    public function setUp(): void
     {
         KirbyEnv::load(__DIR__ . '/resources');
     }

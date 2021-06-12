@@ -9,7 +9,7 @@ class EnvTest extends TestCase
 {
     protected $resources;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->resources = __DIR__ . '/resources';
     }
