@@ -13,14 +13,9 @@ class KirbyEnv
 
     public static function load(string $path = __DIR__, string $file = '.env'): array
     {
-        $adapters = [
-            new EnvConstAdapter(),
-            new ServerConstAdapter(),
-        ];
-
-        $repository = RepositoryBuilder::create()
-            ->withReaders($adapters)
-            ->withWriters($adapters)
+        $repository = RepositoryBuilder::createWithNoAdapters()
+            ->addAdapter(EnvConstAdapter::class)
+            ->addWriter(ServerConstAdapter::class)
             ->immutable()
             ->make();
 
