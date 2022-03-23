@@ -9,7 +9,7 @@ use Dotenv\Repository\RepositoryBuilder;
 
 class KirbyEnv
 {
-    protected static $loaded = false;
+    protected static bool $loaded = false;
 
     public static function load(string $path = __DIR__, string $file = '.env'): array
     {
@@ -38,7 +38,7 @@ class KirbyEnv
         return Dotenv::createImmutable($path, $file)->load();
     }
 
-    public static function isLoaded()
+    public static function isLoaded(): bool
     {
         return !!static::$loaded;
     }
