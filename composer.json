@@ -4,7 +4,7 @@
     "keywords": [
         "kirby", "kirby-3", "env", "dotenv", "phpdotenv"
     ],
-    "version": "4.0.0",
+    "version": "4.0.1",
     "type": "kirby-plugin",
     "license": "MIT",
     "authors": [
