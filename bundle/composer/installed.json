@@ -3494,8 +3494,15 @@
     ],
     "dev": true,
     "dev-package-names": [
+        "doctrine/inflector",
         "doctrine/instantiator",
+        "illuminate/collections",
+        "illuminate/conditionable",
+        "illuminate/contracts",
+        "illuminate/macroable",
+        "illuminate/support",
         "myclabs/deep-copy",
+        "nesbot/carbon",
         "nikic/php-parser",
         "phar-io/manifest",
         "phar-io/version",
@@ -3509,6 +3516,8 @@
         "phpunit/php-text-template",
         "phpunit/php-timer",
         "phpunit/phpunit",
+        "psr/container",
+        "psr/simple-cache",
         "sebastian/cli-parser",
         "sebastian/code-unit",
         "sebastian/code-unit-reverse-lookup",
@@ -3525,7 +3534,10 @@
         "sebastian/resource-operations",
         "sebastian/type",
         "sebastian/version",
+        "symfony/translation",
+        "symfony/translation-contracts",
         "theseer/tokenizer",
+        "voku/portable-ascii",
         "webmozart/assert"
     ]
 }

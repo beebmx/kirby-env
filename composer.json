@@ -4,7 +4,7 @@
     "keywords": [
         "kirby", "kirby-3", "env", "dotenv", "phpdotenv"
     ],
-    "version": "4.0.1",
+    "version": "4.0.2",
     "type": "kirby-plugin",
     "license": "MIT",
     "authors": [
@@ -16,10 +16,10 @@
     "require": {
         "php": "^8.0.2",
         "getkirby/composer-installer": "^1.2",
-        "illuminate/support": "^9.0",
         "vlucas/phpdotenv": "^5.3"
     },
     "require-dev": {
+        "illuminate/support": "^9.19",
         "phpunit/phpunit": "^9.0"
     },
     "config": {

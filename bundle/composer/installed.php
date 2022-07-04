@@ -1,7 +1,7 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '4.0.0',
-        'version' => '4.0.0.0',
+        'pretty_version' => '4.0.1',
+        'version' => '4.0.1.0',
         'type' => 'kirby-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,8 +11,8 @@
     ),
     'versions' => array(
         'beebmx/kirby-env' => array(
-            'pretty_version' => '4.0.0',
-            'version' => '4.0.0.0',
+            'pretty_version' => '4.0.1',
+            'version' => '4.0.1.0',
             'type' => 'kirby-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -26,7 +26,7 @@
             'install_path' => __DIR__ . '/../doctrine/inflector',
             'aliases' => array(),
             'reference' => '8b7ff3e4b7de6b2c84da85637b59fd2880ecaa89',
-            'dev_requirement' => false,
+            'dev_requirement' => true,
         ),
         'doctrine/instantiator' => array(
             'pretty_version' => '1.4.1',
@@ -62,7 +62,7 @@
             'install_path' => __DIR__ . '/../illuminate/collections',
             'aliases' => array(),
             'reference' => '253cfce2bf469c340d2268bfbc31d4ad446a1fa7',
-            'dev_requirement' => false,
+            'dev_requirement' => true,
         ),
         'illuminate/conditionable' => array(
             'pretty_version' => 'v9.19.0',
@@ -71,7 +71,7 @@
             'install_path' => __DIR__ . '/../illuminate/conditionable',
             'aliases' => array(),
             'reference' => '46b7beed47948bd2e67f523d0a76daa62775031e',
-            'dev_requirement' => false,
+            'dev_requirement' => true,
         ),
         'illuminate/contracts' => array(
             'pretty_version' => 'v9.19.0',
@@ -80,7 +80,7 @@
             'install_path' => __DIR__ . '/../illuminate/contracts',
             'aliases' => array(),
             'reference' => 'e014cf88ef46065b8b1f078893c01189b95ffb11',
-            'dev_requirement' => false,
+            'dev_requirement' => true,
         ),
         'illuminate/macroable' => array(
             'pretty_version' => 'v9.19.0',
@@ -89,7 +89,7 @@
             'install_path' => __DIR__ . '/../illuminate/macroable',
             'aliases' => array(),
             'reference' => '25a2c6dac2b7541ecbadef952702e84ae15f5354',
-            'dev_requirement' => false,
+            'dev_requirement' => true,
         ),
         'illuminate/support' => array(
             'pretty_version' => 'v9.19.0',
@@ -98,7 +98,7 @@
             'install_path' => __DIR__ . '/../illuminate/support',
             'aliases' => array(),
             'reference' => '350d65d043cd81ef84e8f5967d8935e8fa52c055',
-            'dev_requirement' => false,
+            'dev_requirement' => true,
         ),
         'myclabs/deep-copy' => array(
             'pretty_version' => '1.11.0',
@@ -116,7 +116,7 @@
             'install_path' => __DIR__ . '/../nesbot/carbon',
             'aliases' => array(),
             'reference' => 'a9000603ea337c8df16cc41f8b6be95a65f4d0f5',
-            'dev_requirement' => false,
+            'dev_requirement' => true,
         ),
         'nikic/php-parser' => array(
             'pretty_version' => 'v4.14.0',
@@ -251,7 +251,7 @@
             'install_path' => __DIR__ . '/../psr/container',
             'aliases' => array(),
             'reference' => 'c71ecc56dfe541dbd90c5360474fbc405f8d5963',
-            'dev_requirement' => false,
+            'dev_requirement' => true,
         ),
         'psr/simple-cache' => array(
             'pretty_version' => '3.0.0',
@@ -260,7 +260,7 @@
             'install_path' => __DIR__ . '/../psr/simple-cache',
             'aliases' => array(),
             'reference' => '764e0b3939f5ca87cb904f570ef9be2d78a07865',
-            'dev_requirement' => false,
+            'dev_requirement' => true,
         ),
         'sebastian/cli-parser' => array(
             'pretty_version' => '1.0.1',
@@ -440,7 +440,7 @@
             'install_path' => __DIR__ . '/../symfony/translation',
             'aliases' => array(),
             'reference' => 'b254416631615bc6fe49b0a67f18658827288147',
-            'dev_requirement' => false,
+            'dev_requirement' => true,
         ),
         'symfony/translation-contracts' => array(
             'pretty_version' => 'v3.1.1',
@@ -449,10 +449,10 @@
             'install_path' => __DIR__ . '/../symfony/translation-contracts',
             'aliases' => array(),
             'reference' => '606be0f48e05116baef052f7f3abdb345c8e02cc',
-            'dev_requirement' => false,
+            'dev_requirement' => true,
         ),
         'symfony/translation-implementation' => array(
-            'dev_requirement' => false,
+            'dev_requirement' => true,
             'provided' => array(
                 0 => '2.3|3.0',
             ),
@@ -482,7 +482,7 @@
             'install_path' => __DIR__ . '/../voku/portable-ascii',
             'aliases' => array(),
             'reference' => 'b56450eed252f6801410d810c8e1727224ae0743',
-            'dev_requirement' => false,
+            'dev_requirement' => true,
         ),
         'webmozart/assert' => array(
             'pretty_version' => '1.11.0',
