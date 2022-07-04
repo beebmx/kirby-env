@@ -4,7 +4,7 @@
     "keywords": [
         "kirby", "kirby-3", "env", "dotenv", "phpdotenv"
     ],
-    "version": "4.0.2",
+    "version": "4.1.0",
     "type": "kirby-plugin",
     "license": "MIT",
     "authors": [
@@ -19,19 +19,20 @@
         "vlucas/phpdotenv": "^5.3"
     },
     "require-dev": {
-        "illuminate/support": "^9.19",
         "phpunit/phpunit": "^9.0"
     },
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
         "sort-packages": true,
-        "vendor-dir": "bundle/",
         "allow-plugins": {
             "getkirby/composer-installer": true
         }
     },
     "autoload": {
+        "files": [
+            "helpers.php"
+        ],
         "psr-4": {
             "Beebmx\\": "src/"
         }
@@ -42,7 +43,7 @@
         }
     },
     "scripts": {
-        "test": "bundle/bin/phpunit"
+        "test": "vendor/bin/phpunit"
     },
     "minimum-stability": "dev",
     "prefer-stable": true

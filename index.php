@@ -1,6 +1,6 @@
 <?php
 
-@include_once __DIR__ . '/bundle/autoload.php';
+@include_once __DIR__ . '/vendor/autoload.php';
 
 use Beebmx\KirbyEnv;
 use Kirby\Cms\App as Kirby;
