@@ -2,28 +2,26 @@
 
 use Beebmx\Env;
 
-if (!function_exists('env')) {
+if (! function_exists('env')) {
     /**
      * Gets the value of an environment variable.
      *
      * @param  string  $key
      * @param  mixed  $default
-     * @return mixed
      */
-    function env($key, $default = null)
+    function env($key, $default = null): mixed
     {
         return Env::get($key, $default);
     }
 }
 
-if (!function_exists('value')) {
+if (! function_exists('value')) {
     /**
      * Return the default value of the given value.
      *
      * @param  mixed  $value
-     * @return mixed
      */
-    function value($value, ...$args)
+    function value($value, ...$args): mixed
     {
         return $value instanceof Closure ? $value(...$args) : $value;
     }

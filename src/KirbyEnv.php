@@ -26,10 +26,6 @@ class KirbyEnv
 
     /**
      * Load environment file in given directory.
-     *
-     * @param string $path
-     * @param string $file
-     * @return array
      */
     public static function overload(string $path = __DIR__, string $file = '.env'): array
     {
@@ -40,6 +36,6 @@ class KirbyEnv
 
     public static function isLoaded(): bool
     {
-        return !!static::$loaded;
+        return (bool) static::$loaded;
     }
 }

@@ -1,5 +1,10 @@
 # Kirby Env
 
+[![Latest Stable Version](https://poser.pugx.org/beebmx/kirby-env/v)](//packagist.org/packages/beebmx/kirby-env)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/beebmx/kirby-env/tests.yml?branch=main)
+[![Total Downloads](http://poser.pugx.org/beebmx/kirby-env/downloads)](https://packagist.org/packages/beebmx/kirby-env)
+[![License](https://poser.pugx.org/beebmx/kirby-env/license)](//packagist.org/packages/beebmx/kirby-env)
+
 **Kirby Env** use the `vlucas/phpdotenv` package and enable their features for Kirby.
 This package should be used if you want to store your project credentials or variables in a separate place from your code or if you want to have development and production access in different places.
 

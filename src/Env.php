@@ -1,32 +1,28 @@
 <?php
 
 namespace Beebmx;
+
 use Dotenv\Repository\Adapter\PutenvAdapter;
 use Dotenv\Repository\RepositoryBuilder;
+use Dotenv\Repository\RepositoryInterface;
 use PhpOption\Option;
 
 class Env
 {
     /**
      * Indicates if the putenv adapter is enabled.
-     *
-     * @var bool
      */
-    protected static $putenv = true;
+    protected static bool $putenv = true;
 
     /**
      * The environment repository instance.
-     *
-     * @var \Dotenv\Repository\RepositoryInterface|null
      */
-    protected static $repository;
+    protected static ?RepositoryInterface $repository = null;
 
     /**
      * Enable the putenv adapter.
-     *
-     * @return void
      */
-    public static function enablePutenv()
+    public static function enablePutenv(): void
     {
         static::$putenv = true;
         static::$repository = null;
@@ -34,10 +30,8 @@ class Env
 
     /**
      * Disable the putenv adapter.
-     *
-     * @return void
      */
-    public static function disablePutenv()
+    public static function disablePutenv(): void
     {
         static::$putenv = false;
         static::$repository = null;
@@ -45,10 +39,8 @@ class Env
 
     /**
      * Get the environment repository instance.
-     *
-     * @return \Dotenv\Repository\RepositoryInterface
      */
-    public static function getRepository()
+    public static function getRepository(): ?RepositoryInterface
     {
         if (static::$repository === null) {
             $builder = RepositoryBuilder::createWithDefaultAdapters();
@@ -68,9 +60,8 @@ class Env
      *
      * @param  string  $key
      * @param  mixed  $default
-     * @return mixed
      */
-    public static function get($key, $default = null)
+    public static function get($key, $default = null): mixed
     {
         return Option::fromValue(static::getRepository()->get($key))
             ->map(function ($value) {
