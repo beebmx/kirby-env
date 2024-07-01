@@ -4,7 +4,7 @@
     "keywords": [
         "kirby", "kirby-3", "kirby-4", "env", "dotenv", "phpdotenv"
     ],
-    "version": "4.2.0",
+    "version": "4.2.1",
     "type": "kirby-plugin",
     "license": "MIT",
     "authors": [
@@ -19,7 +19,7 @@
         "vlucas/phpdotenv": "^5.0"
     },
     "require-dev": {
-        "laravel/pint": "^1.13",
+        "laravel/pint": "^1.16",
         "phpunit/phpunit": "^10.1"
     },
     "config": {
