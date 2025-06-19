@@ -1,8 +1,28 @@
-/kirby
-/vendor
+# system files
+# ------------
+
 /.idea
-composer.lock
+/kirby
+/storage/*.key
 .DS_Store
-.phpunit.result.cache
-.php_cs.cache
 .php-cs-fixer.cache
+.php_cs.cache
+
+# npm modules
+/node_modules
+package-lock.json
+
+# composer files
+/vendor
+composer.lock
+
+# Testing files
+phpunit.xml
+.phpunit.cache
+.phpunit.result.cache
+
+# Parcel cache folder
+.cache
+
+# kirbyup temp development entry
+/index.dev.mjs
