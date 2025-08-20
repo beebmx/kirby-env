@@ -1,6 +1,6 @@
 {
     "name": "beebmx/kirby-env",
-    "description": "Enable env variables to Kirby 3, 4, 5",
+    "description": "Enable env variables to Kirby",
     "keywords": [
         "env",
         "dotenv",
@@ -11,7 +11,7 @@
         "kirby4",
         "kirby5"
     ],
-    "version": "5.0.0",
+    "version": "5.1.0",
     "type": "kirby-plugin",
     "license": "MIT",
     "authors": [
@@ -26,6 +26,7 @@
         "vlucas/phpdotenv": "^5.0"
     },
     "require-dev": {
+        "getkirby/cms": "^3.0|^4.0|^5.0",
         "laravel/pint": "^1.0",
         "pestphp/pest": "^3.0"
     },
@@ -53,6 +54,9 @@
     },
     "scripts": {
         "test": "vendor/bin/pest"
+    },
+    "extra": {
+        "kirby-cms-path": false
     },
     "minimum-stability": "dev",
     "prefer-stable": true

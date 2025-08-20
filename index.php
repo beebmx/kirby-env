@@ -2,22 +2,27 @@
 
 @include_once __DIR__.'/vendor/autoload.php';
 
+use Beebmx\Env;
 use Beebmx\KirbyEnv;
 use Kirby\Cms\App as Kirby;
 
-Kirby::plugin('beebmx/kirby-env', [
+Kirby::plugin('beebmx/env', [
     'options' => [
+        'path' => null,
         'file' => '.env',
     ],
     'pageMethods' => [
         'env' => function ($value, $default = '') {
+            $kirby = Kirby::instance();
+
             if (! KirbyEnv::isLoaded()) {
-                $path = option('beebmx.kirby-env.path', kirby()->roots()->index());
-                $file = option('beebmx.kirby-env.file', '.env');
-                KirbyEnv::load($path, $file);
+                KirbyEnv::load(
+                    path: $kirby->option('beebmx.env.path', $kirby->roots()->index()),
+                    file: $kirby->option('beebmx.env.file', '.env')
+                );
             }
 
-            return env($value, $default);
+            return Env::get($value, $default);
         },
     ],
 ]);

@@ -6,10 +6,9 @@ if (! function_exists('env')) {
     /**
      * Gets the value of an environment variable.
      *
-     * @param  string  $key
      * @param  mixed  $default
      */
-    function env($key, $default = null): mixed
+    function env(string $key, $default = null): mixed
     {
         return Env::get($key, $default);
     }
