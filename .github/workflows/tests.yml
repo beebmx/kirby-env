@@ -1,6 +1,6 @@
 name: Tests
 
-on: ['push', 'pull_request']
+on: [push, pull_request]
 
 jobs:
   test:
@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
