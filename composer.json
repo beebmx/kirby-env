@@ -10,7 +10,7 @@
         "kirby4",
         "kirby5"
     ],
-    "version": "5.1.0",
+    "version": "5.2.2",
     "type": "kirby-plugin",
     "license": "MIT",
     "authors": [
