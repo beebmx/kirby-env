@@ -8,13 +8,38 @@
 **Env** use the `vlucas/phpdotenv` package and enable their features for Kirby.
 This package should be used if you want to store your project credentials or variables in a separate place from your code or if you want to have development and production access in different places.
 
+## Compatibility
+
+| Plugin    | Kirby 3 | Kirby 4 | Kirby 5 | Kirby 6 | PHP  |
+|-----------|:-------:|:-------:|:-------:|:-------:|------|
+| 6.x       |    ❌    |    ✅    |    ✅    |    ✅    | 8.4+ |
+| 5.2.x     |    ❌    |    ✅    |    ✅    |    ❌    | 8.3+ |
+| 5.0 – 5.1 |    ✅    |    ✅    |    ✅    |    ❌    | 8.2+ |
+| 4.2.x     |    ✅    |    ✅    |    ❌    |    ❌    | 8.1+ |
+| 4.0 – 4.1 |    ✅    |    ❌    |    ❌    |    ❌    | 8.0+ |
+| 1.x – 3.x |    ✅    |    ❌    |    ❌    |    ❌    | 7.x+ |
+
+> [!NOTE]
+> The PHP versions you can use also depend on your Kirby version. With the plugin 6.x:
+> Kirby 4 runs on PHP 8.4, Kirby 5 on PHP 8.4 – 8.5 and Kirby 6 on PHP 8.4 – 8.6.
+>
+> Kirby 3 only runs up to PHP 8.3, so it is not supported by the plugin 6.x. Use the plugin 5.1.x instead.
+
 ## Installation
 
 ### Installation with composer
 
-```ssh
-composer require beebmx/kirby-env
-```
+Install the plugin version that matches your Kirby version:
+
+| Kirby | Plugin | Command                                       |
+|-------|--------|-----------------------------------------------|
+| 6.x   | 6.x    | `composer require beebmx/kirby-env`           |
+| 5.x   | 6.x    | `composer require beebmx/kirby-env`           |
+| 4.x   | 6.x    | `composer require beebmx/kirby-env`           |
+| 3.x   | 5.1.x  | `composer require beebmx/kirby-env:"~5.1.0"`  |
+
+Composer installs the newest plugin version your PHP version allows,
+e.g. the plugin 5.2.x on PHP 8.3 with Kirby 4 or Kirby 5.
 
 ## Usage
 

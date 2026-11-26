@@ -1,32 +1,80 @@
 name: Tests
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  test:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: true
-      matrix:
-        os: [ubuntu-latest]
-        php: [8.3, 8.4, 8.5]
-
-    name: P${{ matrix.php }} - ${{ matrix.os }}
+  lint:
+    name: Code style
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          tools: composer:v2
+          coverage: none
+
+      - name: Install dependencies
+        run: composer update --prefer-stable --prefer-dist --no-interaction --no-progress
+
+      - name: Check code style
+        run: vendor/bin/pint --test
+
+  test:
+    name: PHP ${{ matrix.php }} - Kirby ${{ matrix.kirby }} - ${{ matrix.stability }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['8.4', '8.5']
+        kirby: ['4', '5', '6']
+        stability: [prefer-lowest, prefer-stable]
+        exclude:
+          # Kirby 4 supports up to PHP 8.4
+          - php: '8.5'
+            kirby: '4'
+        include:
+          # Kirby 6 is the only version supporting PHP 8.6
+          - php: '8.6'
+            kirby: '6'
+            stability: prefer-stable
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
           tools: composer:v2
-          extensions: ctype, dom, curl, filter, hash, iconv, json, libxml, mbstring, openssl, SimpleXML, zip, pcntl, bcmath, soap, intl, gd, exif, imagick, fileinfo
+          extensions: ctype, curl, dom, fileinfo, filter, gd, hash, iconv, intl, json, libxml, mbstring, openssl, SimpleXML, zip
           coverage: none
 
       - name: Install dependencies
-        run: composer install --no-interaction --prefer-dist --optimize-autoloader
+        run: composer update --${{ matrix.stability }} --prefer-dist --no-interaction --no-progress --optimize-autoloader --with="getkirby/cms:^${{ matrix.kirby }}.0"
 
-      - name: Tests
-        run: ./vendor/bin/pest
+      - name: Execute tests
+        run: vendor/bin/pest
