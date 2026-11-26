@@ -24,6 +24,10 @@ This package should be used if you want to store your project credentials or var
 > Kirby 4 runs on PHP 8.4, Kirby 5 on PHP 8.4 – 8.5 and Kirby 6 on PHP 8.4 – 8.6.
 >
 > Kirby 3 only runs up to PHP 8.3, so it is not supported by the plugin 6.x. Use the plugin 5.1.x instead.
+>
+> Kirby 3 has reached its end of life. Kirby 3 and several of its pinned dependencies have open security advisories,
+> and Composer blocks those packages by default, so installing on a Kirby 3 site fails until you allow it in your
+> project's `composer.json` with `"config": { "policy": { "advisories": { "block": false } } }`.
 
 ## Installation
 
